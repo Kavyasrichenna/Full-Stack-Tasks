@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Assignment</title>
+</head>
+<body>
+
+<h2>Assignment Submission</h2>
+
+<form id="submitForm">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const assignment_id = params.get("assignment_id");
+
+document.getElementById("submitForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    fetch("/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            student_name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            assignment_id: assignment_id
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("msg").textContent = data.message;
+    });
+});
+</script>
+
+</body>
+</html>
