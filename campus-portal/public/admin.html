@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="center-title">👩‍💻 Admin Dashboard</h1>
+
+<!-- LOGIN SECTION -->
+
+<div id="loginSection">
+
+<h2>Admin Login</h2>
+
+<input id="username" placeholder="Username">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="adminLogin()">Login</button>
+
+</div>
+
+<!-- ADMIN CONTENT (HIDDEN BEFORE LOGIN) -->
+
+<div id="adminContent" style="display:none">
+
+<hr>
+
+<h2>Registered Students</h2>
+
+<button onclick="viewRegistrations()">View Registrations</button>
+
+<div id="registrations"></div>
+
+<hr>
+
+<h2>Add Event</h2>
+
+<input id="title" placeholder="Event Title">
+
+<input id="description" placeholder="Event Description">
+
+<input id="event_date" type="date">
+
+<button onclick="addEvent()">Add Event</button>
+
+<hr>
+
+<h2>All Events</h2>
+
+<div id="adminEvents"></div>
+
+<br>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

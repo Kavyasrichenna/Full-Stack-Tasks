@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Student Event Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="center-title">🎓 Student Event Portal</h1>
+
+<h2>Available Events</h2>
+
+<input id="searchInput" placeholder="Search events..." onkeyup="searchEvents()">
+
+<div id="events"></div>
+
+<hr>
+
+<h2>Register for Event</h2>
+
+<form id="registrationForm">
+
+<input id="name" placeholder="Your Name" required>
+
+<input id="email" placeholder="Email" required>
+
+<input id="department" placeholder="Department" required>
+
+<input id="college_name" placeholder="College Name" required>
+
+<input id="eventId" placeholder="Event ID" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p>Admin? <a href="/admin.html">Login Here</a></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
